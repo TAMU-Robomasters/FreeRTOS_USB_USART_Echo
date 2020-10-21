@@ -265,6 +265,25 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   /* USER CODE BEGIN 6 */
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+	
+	uint8_t endLine0[] = "you typed q\r\n";
+	uint8_t endLine1[] = "you typed w\r\n";
+	uint8_t echo[] = " echo\r\n";
+	uint8_t retransmit[20];
+	memset(retransmit, 20, 0);
+	memcpy(retransmit, Buf, (int)*Len);
+	memcpy(retransmit + (int)*Len, echo, sizeof(echo));
+	
+	if (Buf[0] == 'q') {
+		CDC_Transmit_FS(endLine0, sizeof(endLine0));
+	}
+	else if (Buf[0] == 'w') {
+		CDC_Transmit_FS(endLine1, sizeof(endLine1));
+	}
+	else {
+		CDC_Transmit_FS(Buf, *Len);		
+	}
+	
   return (USBD_OK);
   /* USER CODE END 6 */
 }

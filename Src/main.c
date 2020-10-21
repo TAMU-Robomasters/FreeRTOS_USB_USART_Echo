@@ -93,7 +93,7 @@ int main(void)
   MX_GPIO_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
-
+	MX_USB_DEVICE_Init();
   /* USER CODE END 2 */
   /* Init scheduler */
   osKernelInitialize();

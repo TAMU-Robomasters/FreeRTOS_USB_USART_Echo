@@ -112,12 +112,13 @@ void MX_FREERTOS_Init(void) {
 void StartDefaultTask(void *argument)
 {
   /* init code for USB_DEVICE */
-  MX_USB_DEVICE_Init();
-  /* USER CODE BEGIN StartDefaultTask */
+  
+  /* USER CODE BEGIN StartDefaultTask */	
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+		HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);		
+    osDelay(1000);
   }
   /* USER CODE END StartDefaultTask */
 }
