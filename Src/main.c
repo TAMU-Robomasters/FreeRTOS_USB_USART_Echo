@@ -94,6 +94,8 @@ int main(void)
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
 	MX_USB_DEVICE_Init();
+	__HAL_UART_ENABLE_IT(&huart6, UART_IT_RXNE);  //receive interrupt
+  __HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);  //idle interrupt
   /* USER CODE END 2 */
   /* Init scheduler */
   osKernelInitialize();

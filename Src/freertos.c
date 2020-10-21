@@ -26,7 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
-
+#include "usart.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -117,7 +117,8 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-		HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);		
+		//HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+		HAL_UART_Transmit(&huart6, "RoboMaster\r\n", 12, 100);
     osDelay(1000);
   }
   /* USER CODE END StartDefaultTask */

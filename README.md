@@ -44,7 +44,7 @@ Set the display parameters:
 
 # Commands You Can Play With & Observations
 
-`With 1 dev board`
+**With 1 dev board**
 
 1. Any string starts with **q**. The response will be **you typed q\r\n**.
 
@@ -52,11 +52,9 @@ Set the display parameters:
 
 3. For any other strings, the response will repeat what you have sent over USB.
 
-4. Regardless of whether sening strings or not, or the content of the string, one green LED light will turn on and off every second.
+**Only with 2 dev boards**
 
-`Only with 2 dev boards`
-
-
+Regardless of whether sening strings or not, or the content of the string, one green LED light will turn on and off every second on each board.
 
 # How to Use USB in Your Code
 

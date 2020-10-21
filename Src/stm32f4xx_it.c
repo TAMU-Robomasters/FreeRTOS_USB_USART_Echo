@@ -202,7 +202,20 @@ void OTG_FS_IRQHandler(void)
 void USART6_IRQHandler(void)
 {
   /* USER CODE BEGIN USART6_IRQn 0 */
+	volatile uint8_t receive;
+    //receive interrupt 接收中断
+    if(huart6.Instance->SR & UART_FLAG_RXNE)
+    {
+        receive = huart6.Instance->DR;
+        HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
 
+    }
+    //idle interrupt 空闲中断
+    else if(huart6.Instance->SR & UART_FLAG_IDLE)
+    {
+        receive = huart6.Instance->DR;
+        HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+    }
   /* USER CODE END USART6_IRQn 0 */
   HAL_UART_IRQHandler(&huart6);
   /* USER CODE BEGIN USART6_IRQn 1 */
