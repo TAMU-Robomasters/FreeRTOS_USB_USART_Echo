@@ -34,13 +34,13 @@
 
 4. Install **Putty**. Use the following pictures to change Putty settings.
 
-Set the communication parameters:
+    Set the communication parameters:
 
-![Communication Parameter Putty](Putty_Set_Communication.PNG)
+    ![Communication Parameter Putty](Putty_Set_Communication.PNG)
 
-Set the display parameters:
+    Set the display parameters:
 
-![Display Parameter Putty](Putty_Set_Display.PNG)
+    ![Display Parameter Putty](Putty_Set_Display.PNG)
 
 # Commands You Can Play With & Observations
 
